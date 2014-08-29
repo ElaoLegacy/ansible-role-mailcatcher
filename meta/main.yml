@@ -1,0 +1,22 @@
+---
+
+dependencies:
+
+  - { role: elao.base }
+  - { role: elao.ruby }
+  - { role: elao.service, name: mailcatcher, command: '/bin/bash -c "mailcatcher -f --smtp-port 25 --ip `ip addr show dev eth1 scope global | grep inet | awk ''{print $2;}'' | cut -d/ -f1`"' }
+
+galaxy_info:
+
+  author:              elao
+  description:         A mailcatcher role for elao symfony standard vagrant box
+  company:             elao
+  license:             MIT
+  min_ansible_version: 1.7.0
+  platforms:
+    - name: Debian
+  versions:
+    - wheezy
+  categories:
+    - development
+    - web

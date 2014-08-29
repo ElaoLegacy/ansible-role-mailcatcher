@@ -1,0 +1,29 @@
+---
+
+- name: packages dependencies
+  apt: >
+    pkg={{ item }}
+    state=present
+  with_items:
+    - ruby-dev
+    - libsqlite3-dev
+  sudo: yes
+
+- name: packages dependencies i18n
+  gem: >
+    name=i18n
+    version=0.6.11
+    state=present
+  sudo: yes
+
+- name: packages dependencies i18n
+  shell: >
+    gem install i18n -v "0.6.11"
+    creates=/var/lib/gems/2.1.0/gems/i18n-0.6.11
+  sudo: yes
+
+- name: packages
+  shell: >
+    gem install mailcatcher -v "{{ version }}"
+    creates=/usr/local/bin/mailcatcher
+  sudo: yes
