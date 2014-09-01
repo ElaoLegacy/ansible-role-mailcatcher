@@ -12,8 +12,12 @@
   apt: >
     name={{ item }}
     state=absent
+    purge=yes
   with_items:
     - exim4
+    - exim4-base
+    - exim4-config
+    - exim4-daemon-light
   sudo: yes
 
 - name: packages dependencies
