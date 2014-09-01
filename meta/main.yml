@@ -4,7 +4,7 @@ dependencies:
 
   - { role: elao.base }
   - { role: elao.ruby }
-  - { role: elao.service, name: mailcatcher, command: '/bin/bash -c "mailcatcher -f --smtp-port 25 --ip `ip addr show dev eth1 scope global | grep inet | awk ''{print $2;}'' | cut -d/ -f1`"' }
+  - { role: elao.service, name: mailcatcher, command: '/bin/bash -c "mailcatcher -f --smtp-ip 127.0.0.1 --smtp-port 25 --http-ip `ip addr show dev eth1 scope global | grep inet | awk ''{print $2;}'' | cut -d/ -f1`"' }
 
 galaxy_info:
 
