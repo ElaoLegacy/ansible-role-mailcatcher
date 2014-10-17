@@ -3,7 +3,7 @@
 dependencies:
 
   - { role: elao.ruby }
-  - { role: elao.service,
+  - { role: elao.services,
     elao_services: [
       { name: mailcatcher, type: command, command: 'mailcatcher -f --smtp-port 25 --http-ip 0.0.0.0' }
     ]
