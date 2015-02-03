@@ -26,7 +26,7 @@
 - name: packages dependencies
   apt: >
     name={{ item }}
-    state=present
+    state=latest
   with_items:
     - ruby-dev
     - libsqlite3-dev
