@@ -8,7 +8,7 @@
   with_items:
     - exim4
   register: command_result
-  failed_when: command_result|failed and ('service not found' not in command_result.msg) and ('no service or tool found' not in command_result.msg
+  failed_when: command_result|failed and ('service not found' not in command_result.msg) and ('no service or tool found' not in command_result.msg)
   sudo: yes
 
 - name: packages undependencies
