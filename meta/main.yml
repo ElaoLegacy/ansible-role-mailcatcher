@@ -4,14 +4,13 @@ dependencies:
 
   - { role: elao.ruby }
   - { role: elao.services,
-    elao_services: [
-      { name: mailcatcher, type: command, command: 'mailcatcher -f --smtp-port 25 --http-ip 0.0.0.0' }
-    ]
-  }
+      elao_services: [
+        { name: mailcatcher, type: command, command: 'mailcatcher {{ elao_mailcatcher_config }}' }
+      ]
+    }
 
 
 galaxy_info:
-
   author:              elao
   description:         A mailcatcher role for elao symfony standard vagrant box
   company:             elao
